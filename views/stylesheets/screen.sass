@@ -2,3 +2,50 @@
  
 +blueprint
 
+body
+  :background #111
+.container
+  :background #f11
+.header
+  :background #111
+  :margin-bottom 2em
+  h1
+    :color #999
+    :text-decoration none
+    :font-weight bold
+    :font-size 300%
+    :padding 0.5em 0
+    
+.body
+  +container
+  .fuckoff
+    :margin 1em
+    .bar
+      h3
+        :display inline
+        :color #111
+        :font-size 125%
+        :font-weight bold
+      span.chars
+        :text-align right
+        :font-size 150%
+        :color #aaa
+    .wrapper
+      +column(12)
+      textarea.rant
+        :height 150px
+        :font-size 120%
+      input[name=rant]
+        +border-radius(5px)
+        :background-image #f11 url(http://s.twimg.com/a/1256674706/images/round-btn.gif)
+        :height 32px
+        :width 115px
+        :border none
+        :font-weight bold
+        :font-size 16px
+        :color #333
+    #holder
+      +column(12)
+      :height 150px
+.footer
+  :text-align center

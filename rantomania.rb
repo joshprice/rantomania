@@ -4,8 +4,9 @@ require 'sinatra'
 require 'haml'
 require 'pg'
 require 'pp'
-
 require 'activerecord'
+
+set :haml, {:format => :html5 }
 
 dbconfig = YAML.load(File.read('config/database.yml'))
 pp dbconfig['development']
@@ -15,20 +16,20 @@ end
 
 ActiveRecord::Base.establish_connection(:adapter => 'postgresql', :database => "rantomania_development")
 
-# at a  minimum, the  main  sass file  must reside  within the  ./views
-# directory. here, we create a  ./views/stylesheets directory where all of
-# the sass files can safely reside.
 get '/stylesheets/:name.css' do
   content_type 'text/css', :charset => 'utf-8'
   sass :"stylesheets/#{params[:name]}", Compass.sass_engine_options
 end
 
+before do
+  @rants = Rant.all :order => 'id desc'
+end
+
 get '/' do
-  @rants = Rant.find(:all)
   haml :index
 end
 
-post '/rant/' do
+post '/rant' do
   pp params
   if params['rant']
     Rant.create(:rant => params['rant'])
@@ -38,6 +39,5 @@ post '/rant/' do
 end
   
 not_found do
-  content_type 'text/html'
-  haml :index
+  redirect '/'
 end

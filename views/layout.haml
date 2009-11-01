@@ -1,80 +1,37 @@
 !!!
-%html(lang="en")
+%html
   %head
     %title Rant-O-Mania!!!one!1!
     %meta(http-equiv="content-type" content="text/html" charset="utf-8")
     %meta(http-equiv="content-language" content="en")
     %meta(author="Richard Heycock, Josh Price, James Sadler, Simon Swayne")
     %meta(name="description" content="What's fucking you off right now?")
-    %meta(name="keywords" content="rant, fuck, shit, bastard, cunt")
+    %meta(name="keywords" content="rant, fuck, shit, bollocks, twat")
     
-    %link(href="/css/screen.css" media="screen" rel="stylesheet" type="text/css")
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js")
+    %link(href="stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css")
+    %script(type="text/javascript" src="javascript/jquery-1.3.2.min.js")
+    %script(type="text/javascript" src="javascript/underscore-min.js")
+    %script(type="text/javascript" src="javascript/raphael-min.js")
+    %script(type="text/javascript" src="javascript/g.raphael-min.js")
+    %script(type="text/javascript" src="javascript/g.line-min.js")
     %script(type="text/javascript" src="javascript/rant.js")
 
-    
-    %style
-      :sass
-        body
-          background: #111
-        .container
-          background: #f11
-        .header
-          background: #111
-          margin-bottom: 2em
-          h1
-            color: #999
-            text-decoration: none
-            font-weight: bold
-            font-size: 500%
-            padding: 0.5em 0
-            
-        .body
-          .fuckoff
-            margin: 1em
-            h3
-              color: #111
-              font-size: 200%
-              font-weight: bold
-              span.chars
-                float: right
-                font-size: 140%
-                color: #aaa
-                margin: -1em 0 0 0 
-            textarea.rant
-              width: 99%
-              height: 200px
-              font-size: 120%
-            input[name=rant]
-              -moz-border-radius-bottomleft: 5px
-              -moz-border-radius-topleft: 5px
-              -moz-border-radius-bottomright: 5px
-              -moz-border-radius-topright: 5px
-              float: right
-              background-image: #f11 url(http://s.twimg.com/a/1256674706/images/round-btn.gif)
-              height: 32px
-              width: 115px
-              border: none
-              font-weight: bold
-              font-size: 16px
-              color: #333
-        .footer
-          text-align: center
-        li.twitter
-          background: transparent url(images/twitter.gif) no-repeat scroll left center
-          
   %body
     .container
       .header
         %h1 RANT-O-MANIA
       .body
         .fuckoff
-          %h3
-            What's fucking you off right now?
-            %span.chars 1000
-          %textarea.rant
-          %input(type="submit" id="send" name="rant" value="Rant!")
-        
+          .bar
+            %h3
+              What's pissing you off right now?
+            %span.chars 0
+          .entry
+            .wrapper
+              %textarea.rant
+              %input(type="submit" id="send" name="rant" value="Rant!")
+            #holder
+
         = yield
         
       .footer

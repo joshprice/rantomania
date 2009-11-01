@@ -1,4 +1,5 @@
-# Rant-o-mania - what's pissing you off right now?
+# Rant-o-mania
+## what's pissing you off right now?
 
 Twitter clone for rants, incorporating a realtime rant-o-meter.
 

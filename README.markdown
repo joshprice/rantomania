@@ -1,3 +1,5 @@
-# Rant0man1a - what's fucking you off RIGHT NOW!!!11!!eleven
+# Rant-o-mania - what's pissing you off right now?
 
-[http://rantomania.com](http://rantomania.com "RantOmania")
+Twitter clone for rants, incorporating a realtime rant-o-meter.
+
+[http://rantomania.com](http://rantomania.com "Rant-o-mania")
